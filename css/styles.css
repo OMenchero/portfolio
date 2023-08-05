@@ -23,6 +23,7 @@ http://www.templatemo.com/preview/templatemo_421_raleway
 
 
 
+	  /* Style du bouton en version mobile (écrans plus petits) */
 
 
 
@@ -33,13 +34,21 @@ http://www.templatemo.com/preview/templatemo_421_raleway
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 12px;
+    font-size: 28px;
     width: 170px;
     height: 50px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
   }
+
+	  @media (max-width: 767px) {
+	    .btn-work {
+	      display: block;
+	      width: 100%;
+	      font-size: 17px;
+	    }
+	  }
   
   .btn-work span {
     cursor: pointer;
