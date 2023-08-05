@@ -64,6 +64,10 @@
 	   .offer-title h2{
 		   font-size: 20px;
 	  }
+		   .inner-story h2{
+		   font-size: 20px;
+	  }
+}
   
   .btn-work span {
     cursor: pointer;
