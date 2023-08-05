@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+	<title>PortFolio - MENCHERO</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="languages.json" id="translations" type="application/json"></script>
+	<script>
+		// Charger le fichier JSON des traductions
+		fetch("languages.json")
+		  .then(response => response.json())
+		  .then(data => {
+			// Fonction pour changer la langue
+			function changeLanguage(lang) {
+			  // Récupérer les traductions pour la langue sélectionnée
+			  var translations = data[lang];
+	  
+			  // Mettre à jour les éléments HTML avec les traductions
+			  document.querySelectorAll('[data-lang-key]').forEach(element => {
+				var key = element.getAttribute('data-lang-key');
+				if (translations[key]) {
+				  element.textContent = translations[key];
+				}
+			  });
+			}
+	  
+			// Appeler la fonction pour définir la langue initiale (par défaut, "en")
+			changeLanguage("fr");
+	  
+			// Gérer l'événement de changement de langue
+			document.getElementById('langSelect').addEventListener('change', function() {
+			  var selectedLang = this.value;
+			  changeLanguage(selectedLang);
+			});
+		  })
+		  .catch(error => console.error("Erreur lors du chargement du fichier JSON des traductions:", error));
+	  </script>
+	  
+	  
+	  
+</head>
+<body>
+	<header class="site-header container animated fadeInDown">
+		<div class="header-wrapper">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="site-branding">
+						<a href="#"><h1>Portfolio</h1></a>
+					</div>
+				</div>
+				<a href="#" class="toggle-nav hidden-md hidden-lg">
+					<i class="fa fa-bars"></i>
+				</a>
+				<div class="col-md-8">
+					<nav id="nav" class="main-navigation hidden-xs hidden-sm">
+						<ul class="main-menu">
+							<li><a class="show-1 active homebutton" data-lang-key="nav1" href="#">Accueil</a></li>
+							<li><a class="show-2 aboutbutton" data-lang-key="nav2" href="#">A propos de moi</a></li>
+							<li><a class="show-3 projectbutton" data-lang-key="nav3" href="#">Mes projets</a></li>
+							<li><a class="show-4 blogbutton" data-lang-key="nav4"  href="#">Mes certifications</a></li>
+							<li><a class="show-5 contactbutton" data-lang-key="nav5"  href="#">Contact</a></li>
+							<i class="fas flag-fr"></i>
+							<select id="langSelect">
+								<option selected value="fr">&#127467;&#127479;</option>
+								<option value="en">&#127482;&#127480;</option>
+							  </select>
+						</ul>
+					</nav>
+					<nav class="main-navigation menu-responsive hidden-md hidden-lg">
+						<ul class="main-menu">
+							<li><a class="show-1 active homebutton" data-lang-key="nav1" href="#">Accueil</a></li>
+							<li><a class="show-2 aboutbutton" data-lang-key="nav2" href="#">A propos de moi</a></li>
+							<li><a class="show-3 projectbutton" data-lang-key="nav3" href="#">Mes projets</a></li>
+							<li><a class="show-4 blogbutton" data-lang-key="nav4"  href="#">Mes certifications</a></li>
+							<li><a class="show-5 contactbutton" data-lang-key="nav5"  href="#">Contact</a></li>
+							<select id="langSelect">
+								<option selected value="fr">&#127467;&#127479;</option>
+								<option value="en">&#127482;&#127480;</option>
+							  </select>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	
+	<div id="menu-container">
+		<div id="menu-1" class="homepage home-section container">
+			<div class="home-intro text-center">
+				<h2 class="welcome-title animated fadeInLeft" data-lang-key="title">Bonjour le monde,</h2>
+				<p class="animated fadeInRight" data-lang-key="description">Je suis Owen, un passionné d'informatique et de technologie. Actuellement au Mans, je touche un peu à plusieurs domaines dont le drone, la domotique, la robotique, ou encore l'informatique au travers du développement. Je suis en recherche d'une alternance en tant que Concepteur Développeur d'Applications, mon portfolio reflète mon dévouement à l'innovation technologique et à la création de solutions novatrices.</p>
+				<ul class="list-icons animated fadeInUp">
+					<li><i class="icon-trophy"></i></li>
+					<li><i class="icon-badge"></i></li>
+					<li><i class="icon-graduation"></i></li>
+					<li><i class="icon-screen-desktop"></i></li>
+				</ul>
+			</div>
+			<div class="home-projects">
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+						<div class="project-title animated fadeInUp">
+							<h2 data-lang-key="title-projects">Derniers projets</h2>
+							<p data-lang-key="projects">Dans mon portfolio, vous trouverez une gamme variée de projets qui mettent en évidence à la fois mon expertise individuelle et mon expérience du travail en collaboration. Certains projets, comme Malrauxlib et Tech-Reviews, étaient des efforts conjoints passionnants impliquant de multiples contributeurs. 
+								D'autre part, Informatikmans a également impliqué un travail d'équipe pour atteindre des objectifs communs. 
+								Enfin, je suis fière de mon projet individuel, Prestige Coiffure, dans le cadre duquel j'ai travaillé de manière indépendante pour réussir. Ces projets démontrent ma capacité à m'épanouir à la fois en tant que collaboratrice indépendante et en tant que collaboratrice efficace. </p>
+						</div>
+					</div>
+					<div class="project-home-holder col-md-6 col-sm-12">
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<div class="project-item one animated fadeInRight">
+									<img src="img/1.jpg" alt="">
+									<div class="overlay">
+										<h4><a href="https://malrauxlib.fr">MalrauxLIB</a></h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<div class="project-item two animated fadeInRight">
+									<img src="img/2.jpg" alt="">
+									<div class="overlay">
+										<h4><a href="https://tech-reviews.fr">Tech-Reviews</a></h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<div class="project-item three animated fadeInRight">
+									<img src="img/3.jpg" alt="">
+									<div class="overlay">
+										<h4><a href="https://informatikmans.org">InformatikMans</a></h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<div class="project-item four animated fadeInRight">
+									<img src="img/4.jpg" alt="">
+									<div class="overlay">
+										<h4><a href="#">Prestige Coiffure 🚧</a></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="menu-2" class="content about-section container">
+			<div class="our-story">
+				<div class="story-bg animated fadeIn"></div>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="inner-story animated fadeInRight text-center">
+							<h2 data-lang-key="nav2">A propos de moi</h2>
+							<p data-lang-key="about-me">Passionné par le développement d'applications et de sites web, je trouve de la joie dans l'apprentissage et l'exploration du numérique et de la technologie. Le développement d'applications et de sites web me permet de plonger plus profondément dans ce domaine passionnant, en découvrant continuellement ses possibilités infinies.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="our-offers">
+				<div class="offer-bg animated fadeIn"></div>
+				<div class="offer-header">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<div class="offer-title animated fadeInDown">
+								<h2 data-lang-key="work">Mes travaux</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="offer-holder">
+						<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fxjxt0v0Ci8FN4Za8BNZxLp%2FProjet---Prestige-Coiffure%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DqBpuQVhZNIztufgQ-1" allowfullscreen></iframe>
+						<div class="col-md-6">
+							<div class="offer-item offer-1 animated fadeInLeft">
+								<figure>
+									<img src="img/a1.jpg" alt="">
+								</figure>
+								<div class="offer-content text-center">
+									<h4 data-lang-key="work-1">Mes maquettes</h4>
+									<p data-lang-key="work-content-1">Il s'agit d'une partie de mes maquettes (applications et web).</p>
+									<a class="btn-work" href="#" style="vertical-align:middle"><span><p data-lang-key="btn-work">Découvrir</p></span></a>
+									
+									<span class="offer-left"><i></i></span>
+									<span class="offer-right"><i></i></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="offer-item offer-2 animated fadeInRight">
+								<figure>
+									<img src="img/a2.jpg" alt="">
+								</figure>
+								<div class="offer-content text-center">
+									<h4 data-lang-key="work-2">Mes prototypes</h4>
+									<p data-lang-key="work-content-2">Il s'agit d'une partie de mes prototypes de créations web.</p>
+									<a class="btn-work" href="#" style="vertical-align:middle"><span><p data-lang-key="btn-work">Découvrir</p></span></a>
+									<span class="offer-left"><i></i></span>
+									<span class="offer-right"><i></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="menu-3" class="content project-section container">
+			<div class="projects-header">
+				<h2 class="animated fadeInRight" data-lang-key="nav3">Mes projets</h2>
+				<p class="animated fadeInLeft" data-lang-key="projects-info">Voici mes projets en ligne, chacun représentant une étape vers la diversification de ma présence en ligne pour chaque projet ou entreprise. Ces projets témoignent de mon engagement à établir une identité unique dans le paysage numérique pour chacun de mes projets.</p>
+			</div>
+			<div class="projects-holder">
+				<div class="row">
+					<div class="col-md-4 col-sm-6 p-1 animated umScaleIn">
+						<div class="project-item">
+							<img src="img/1.jpg" alt="">
+							<div class="overlay">
+								<h4><a href="https://malrauxlib.fr">MalrauxLIB</a></h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-2 animated umScaleIn">
+						<div class="project-item">
+							<img src="img/2.jpg" alt="">
+							<div class="overlay">
+								<h4><a href="https://tech-reviews.fr">Tech-Reviews</a></h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3 animated umScaleIn">
+						<div class="project-item">
+							<img src="img/3.jpg" alt="">
+							<div class="overlay">
+								<h4><a href="https://informatikmans.org">InformatikMans</a></h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-6 p-4 animated umScaleIn">
+						<div class="project-item animated umScaleIn">
+							<img src="img/4.jpg" alt="">
+							<div class="overlay">
+								<h4><a href="#">Prestige Coiffure 🚧</a></h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 p-4 animated umScaleIn">
+						<div class="project-item animated umScaleIn">
+							<img src="img/5.jpg" alt="">
+							<div class="overlay">
+								<h4><a href="#" data-lang-key="your-project">Peut être votre projet ?</a></h4>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+		<div id="menu-4" class="content blog-section container">
+			<div class="blog-header text-center">
+				<h2 class="animated fadeInRight" data-lang-key="nav4">Mes certifications</h2>
+				<p class="animated fadeInLeft" data-lang-key="certif-info">Vous trouverez ci-joint l'ensemble de mes certifications acquises.</p>
+			</div>
+			<div class="row blog-posts">
+				<div class="col-md-4 col-sm-12">
+					<div class="blog-item post-1 animated zoomIn">
+						<div class="blog-bg blog-pink"></div>
+						<div class="blog-content">
+							<h3><a href="https://www.credly.com/badges/9cbbc03b-456e-47be-bc33-b1fd3beb7fa9/linked_in_profile" data-lang-key="certif-title-1">Cybersécurité</a></h3>
+							<span class="solid-line"></span>
+							<p data-lang-key="certif-content-1">Le détenteur de cette certification de niveau étudiant a des connaissances fondamentales en cybersécurité, y compris la sécurité des réseaux, le chiffrement et les lois.</p>
+							<a href="https://www.credly.com/badges/9cbbc03b-456e-47be-bc33-b1fd3beb7fa9/linked_in_profile" class="post-button" data-lang-key="btn-certif">En être sûr</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<div class="blog-item post-2 animated zoomIn">
+						<div class="blog-bg blog-blue"></div>
+						<div class="blog-content">
+							<h3><a href="https://drive.google.com/file/d/1WIWWzYkJ9NtTA59b74hwFcFaKwkd6I_V/view?usp=sharing">Pix</a></h3>
+							<span class="solid-line"></span>
+							<p data-lang-key="certif-content-2">Pix est un service en ligne français du dispositif des startups d’État de la Dinum. Il permet aux utilisateurs d'évaluer, développer et certifier leurs compétences numériques.</p>
+							<a href="https://drive.google.com/file/d/1WIWWzYkJ9NtTA59b74hwFcFaKwkd6I_V/view?usp=sharing" class="post-button" data-lang-key="btn-certif">En être sûr</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<div class="blog-item post-3 animated zoomIn">
+						<div class="blog-bg blog-green"></div>
+						<div class="blog-content">
+							<h3><a href="#" data-lang-key="certif-title-3">Plusieurs autres..</a></h3>
+							<span class="solid-line"></span>
+							<p data-lang-key="certif-content-3">En attente d'ajout (temporaire).</p>
+							<a href="#" class="post-button" data-lang-key="btn-certif">En être sûr</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="menu-5" class="content contact-section container">
+			<div class="contact-header text-center">
+				<h1 class="animated fadeInLeft" data-lang-key="contactme">Prendre contact avec moi.</h1>
+				<ul class="contact-social animated fadeInUp">
+					<hr>
+					<a class="animated fadeInLeft" href="mailto:owen.menchero@informatikmans.org">E-mail : owen.menchero[at]informatikmans.org</a>
+					<hr>
+					<h2 data-lang-key="resume">Mon cv</h2>
+					<a href="https://lh3.googleusercontent.com/drive-viewer/AITFw-xc2O5hCsETG1LvHDNa3csg8262aNNuLTbbX15r1mz0WC7wfRWz94kpY86StnjYmc0AbRYz5cUoI8tz5T9qvub17PShAA=s1600?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/drive-viewer/AITFw-xc2O5hCsETG1LvHDNa3csg8262aNNuLTbbX15r1mz0WC7wfRWz94kpY86StnjYmc0AbRYz5cUoI8tz5T9qvub17PShAA=s1600" style="    max-width: 100%;
+						height: auto" /> </a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<footer class="site-footer container text-center">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="main-footer">
+					<ul class="social">
+						<li><a href="https://www.facebook.com/Omenchero/"><i class="icon-social-facebook"></i>  Facebook</a></li>
+						<li><a href="https://twitter.com/omenchero"><i class="icon-social-twitter"></i>  Twitter</a></li>
+						<li><a href="https://www.instagram.com/owenmenchero/"><i class="icon-social-instagram"></i>  Instagram</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/templatemo_custom.js"></script>
+</body>
+</html>
