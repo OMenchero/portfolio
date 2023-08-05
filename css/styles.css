@@ -55,6 +55,13 @@
 		  font-size: 24px;
 		}
 	  }
+
+@media (max-width: 405px) {
+
+	  .offer-content h4 {
+		  font-size: 14px;
+		}
+	  }
   
   .btn-work span {
     cursor: pointer;
